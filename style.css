@@ -1,0 +1,129 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+@font-face {
+    font-family: 'Bebas';
+    src: url(./BebasNeue-Regular.ttf);
+}
+#full-view{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+#clock{
+    display: flex;
+    font-family: 'Bebas';
+    
+}
+.hourView{
+    height: 385px;
+    width: 385px;
+    background: #101010;   
+    margin:16px;
+    border-radius: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    position: relative;
+}
+
+
+.minuteView{
+    height: 385px;
+    width: 385px;
+    background: #101010;
+    margin:16px;
+    border-radius: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    position: relative;
+    
+}
+
+.meridianView{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 4rem;
+    opacity: .8;
+    
+}
+.hour{
+    font-size: 22rem;
+    margin-bottom: -40px;
+}
+.minute{
+    font-size: 22rem;
+    margin-bottom: -40px;
+
+}
+.hourView::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    z-index: 10;
+    background: black;
+    position: absolute;
+}
+.minuteView::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    z-index: 10;
+    background: black;
+    position: absolute;
+}
+
+
+/* Responsive Code */
+#responsive{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    /* transform: translate(-50%,-50%); */
+}
+.sub-rep{
+    font-weight: 400;
+}
+.responsive{
+    background: #000;
+    color: aliceblue;
+    padding: 2rem 3rem;
+    font-family: sans-serif;
+
+}
+@media screen and (max-width:900px) {
+    .hourView , .minuteView{
+        height: 290px;
+        width: 290px;
+        
+    }
+    .hour , .minute{
+        font-size: 16rem;
+    }
+    .meridianView{
+        font-size:2.7rem;
+    }
+}
+
+@media screen and (orientation:portrait ) and (max-width:650px) {
+    #full-view{
+        display: none;
+    }
+    #responsive{
+        display: block;
+    }
+}
